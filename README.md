@@ -37,9 +37,9 @@ A DeepSeek Harness cost-saving plugin: it **losslessly slims your instruction be
 
 ### 安装
 
-- 在 dshfind 插件市场里搜 `dsh-token-saver` 一键安装；
+- 在 dshfind 插件市场里搜 `dsh-token-saver`（包名 `@acmepoyen/dsh-token-saver`）一键安装；
 - 或手工：把本包目录交给 `plugin_manager` 的 `install_bundle`（`target` 用绝对路径）；
-- 或从 npm 装：`npm i dsh-token-saver` 后按上面的方式挂载。
+- 或从 npm 装：`npm i @acmepoyen/dsh-token-saver` 后按上面的方式挂载。
 
 安装后左侧栏底部会多出一个徽章，不需要重启 DSH 桌面端；改插件代码才需要。
 
@@ -91,7 +91,7 @@ Slimmed tokens stay in the request prefix, so they are saved again on every late
 
 ### Install
 
-Install `dsh-token-saver` from the dshfind marketplace, or hand the package directory to `plugin_manager`'s `install_bundle`, or `npm i dsh-token-saver` and mount it the same way.
+Install `@acmepoyen/dsh-token-saver` from the dshfind marketplace, or hand the package directory to `plugin_manager`'s `install_bundle`, or `npm i @acmepoyen/dsh-token-saver` and mount it the same way.
 
 ### Boundaries
 

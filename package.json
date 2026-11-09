@@ -1,5 +1,5 @@
 {
-  "name": "dsh-token-saver",
+  "name": "@acmepoyen/dsh-token-saver",
   "version": "0.1.1",
   "type": "module",
   "description": "DSH 省钱插件：指令进模型前做无损瘦身，左侧栏实时显示本次与累计省下的 token、金额和提示词缓存命中率。｜Losslessly slims your instruction before it reaches the model, then shows this-session and all-time saved tokens/money plus the prompt-cache hit rate in the sidebar.",
