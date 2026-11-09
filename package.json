@@ -17,13 +17,13 @@
   ],
   "license": "MIT",
   "author": "acmepoyen",
-  "homepage": "https://github.com/acmepoyen/dsh-token-saver#readme",
+  "homepage": "https://github.com/lucaixia1982/dsh-token-saver#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/acmepoyen/dsh-token-saver.git"
+    "url": "git+https://github.com/lucaixia1982/dsh-token-saver.git"
   },
   "bugs": {
-    "url": "https://github.com/acmepoyen/dsh-token-saver/issues"
+    "url": "https://github.com/lucaixia1982/dsh-token-saver/issues"
   },
   "exports": {
     ".": "./index.js",
