@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Token saver",
+    "description": "Slims user instructions and shows saved tokens, saved money and the input cache hit rate in the sidebar."
+  }
+}

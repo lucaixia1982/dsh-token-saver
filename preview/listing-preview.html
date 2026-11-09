@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>dshfind 上架预览 · dsh-token-saver</title>
+<style>
+  :root{
+    --bg:#f7f8fa; --card:#ffffff; --fg:#14181f; --muted:#5d6673; --line:#e3e7ec;
+    --brand:#1f8f6a; --brand-soft:#eaf6f1; --accent:#247bbf;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.65 -apple-system,"Segoe UI","Microsoft YaHei",system-ui,sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 24px 64px}
+  .top{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .top small{color:var(--muted)}
+  h1{font-size:22px;margin:0}
+  h2{font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:36px 0 12px;font-weight:600}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:16px;align-items:flex-start}
+  .avatar{width:56px;height:56px;border-radius:14px;flex:0 0 56px;overflow:hidden}
+  .avatar svg{width:56px;height:56px;display:block}
+  .grow{flex:1;min-width:0}
+  .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .name{font-weight:700;font-size:16px}
+  .by{color:var(--muted);font-size:13px}
+  .pill{font-size:12px;padding:2px 9px;border-radius:999px;background:#eef1f5;color:var(--muted)}
+  .pill.cat{background:var(--brand-soft);color:var(--brand)}
+  .pill.ver{background:#eef4fd;color:var(--accent)}
+  .desc{margin:8px 0 0;color:#2b323c;font-size:14px}
+  .desc .en{color:var(--muted);display:block;margin-top:4px;font-size:13px}
+  .install{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:#f2f5f8;color:var(--muted);font-size:13px;white-space:nowrap}
+  .meta{display:flex;gap:22px;margin-top:12px;color:var(--muted);font-size:13px;flex-wrap:wrap}
+  .detail{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+  .detail h3{margin:0 0 4px;font-size:20px}
+  .links a{color:var(--accent);text-decoration:none;font-size:13px;margin-right:14px}
+  .links a:hover{text-decoration:underline}
+  .split{display:grid;grid-template-columns:1fr 320px;gap:18px}
+  @media (max-width:820px){.split{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:10px;padding:7px 11px;background:#fff;font-size:13px;font-weight:600}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--brand)}
+  .rail{width:56px;border:1px solid var(--line);border-radius:10px;padding:10px 0;text-align:center;font-size:11px;color:var(--brand);font-weight:600;background:#fff}
+  .tip{background:#14181f;color:#e9edf2;border-radius:10px;padding:12px 14px;font-size:12.5px;line-height:1.7;margin-top:12px}
+  .tip b{color:#8fe3c4;font-weight:600}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  td{padding:7px 0;border-bottom:1px dashed var(--line);vertical-align:top}
+  td:first-child{color:var(--muted);width:112px}
+  code,pre{font-family:ui-monospace,"Cascadia Code",Consolas,monospace;font-size:12.5px}
+  pre{background:#14181f;color:#dfe7ee;border-radius:10px;padding:14px 16px;overflow:auto}
+  .chk{list-style:none;padding:0;margin:0}
+  .chk li{padding:8px 0;border-bottom:1px dashed var(--line);display:flex;gap:10px;align-items:flex-start}
+  .box{width:16px;height:16px;border:1.5px solid #b8c0ca;border-radius:4px;flex:0 0 16px;margin-top:3px}
+  .box.done{background:var(--brand);border-color:var(--brand);position:relative}
+  .box.done::after{content:"";position:absolute;left:4.5px;top:1px;width:4px;height:9px;border:2px solid #fff;border-top:0;border-left:0;transform:rotate(40deg)}
+  .note{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="pill cat">上架预览</span>
+    <small>本地 mock，不是 dshfind 线上页面；线上收录后由 dshfind 自己的模板渲染。</small>
+  </div>
+  <h1>dsh-token-saver</h1>
+
+  <h2>① 市场列表卡片（Plugins 列表里的样子）</h2>
+  <div class="card">
+    <div class="avatar">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Token saver">
+        <circle cx="32" cy="32" r="24" fill="#1f8f6a"/>
+        <path d="M32 16c-2 0-3.4 1.4-3.4 3.4v2.1c-4.6.7-8 3.2-8 7.3 0 4.6 4.2 6.3 8.4 7.3 3.4.8 5.2 1.5 5.2 3.1 0 1.7-1.7 2.7-4.2 2.7-2.8 0-5.2-1.1-7.2-2.8l-3 4.4C22.4 46.4 27 48.5 32 49v3c0 2 1.4 3.4 3.4 3.4S38 54 38 52v-3.1c4.9-.8 8.4-3.4 8.4-7.9 0-4.8-4.3-6.5-8.6-7.5-3.3-.8-5-1.4-5-3 0-1.5 1.5-2.4 3.9-2.4 2.5 0 4.6 1 6.4 2.5l3.1-4.3c-2.2-1.9-5.1-3.1-8.2-3.6V19.4C38 17.4 36.6 16 34.6 16H32z" fill="#ffffff"/>
+      </svg>
+    </div>
+    <div class="grow">
+      <div class="row">
+        <span class="name">dsh-token-saver</span>
+        <span class="pill cat">工具集成</span>
+        <span class="pill ver">v0.1.1</span>
+      </div>
+      <div class="by">@acmepoyen · dshfind.com/zh/plugins/acmepoyen/dsh-token-saver</div>
+      <p class="desc">DSH 省钱插件：指令进模型前做无损瘦身，左侧栏实时显示本次与累计省下的 token、金额和提示词缓存命中率。
+        <span class="en">Losslessly slims your instruction before it reaches the model, then shows this-session and all-time saved tokens/money plus the prompt-cache hit rate in the sidebar.</span>
+      </p>
+      <div class="meta">
+        <span>安装量 · 新包</span>
+        <span>dshfind 评分 · 待收录</span>
+        <span>许可 MIT</span>
+      </div>
+    </div>
+    <div class="install">安装</div>
+  </div>
+
+  <h2>② 插件详情页（点进去的样子）</h2>
+  <div class="split">
+    <div class="detail">
+      <h3>dsh-token-saver</h3>
+      <div class="by">@acmepoyen · MIT · DeepSeek Harness 0.2.x</div>
+      <div class="links" style="margin-top:10px">
+        <a href="#">GitHub 仓库</a><a href="#">npm 包</a><a href="#">讨论</a>
+      </div>
+      <p class="desc" style="margin-top:14px">它是一个「先瘦身、再记账、后展示」的三段式插件：</p>
+      <table>
+        <tr><td>瘦身</td><td>只删无语义损失的字符：行尾空格、连续空格、连续空行、重复行、重复段落、结尾寒暄。代码块不动，运行时上下文不动，收益 &lt;15 token 或 &lt;4% 时保留原文。</td></tr>
+        <tr><td>记账</td><td>每次调用记录未命中输入、命中输入、输出；修正 DeepSeek <code>inputTokens</code> 只含未命中部分的口径。</td></tr>
+        <tr><td>展示</td><td>左侧栏徽章：<code>本次 ¥X · 累计 ¥Y</code>；悬停八行明细，含命中率与缓存前缀重建次数。</td></tr>
+        <tr><td>隐私</td><td>全部本地：聚合数据写到 <code>~/.dsh/dsh-token-saver.json</code>，不联网、不上报。</td></tr>
+      </table>
+    </div>
+    <div class="panel">
+      <div class="note" style="margin-bottom:8px">左侧栏实际显示（你真机实测的数字）</div>
+      <div class="badge"><span class="dot"></span>本次 ¥1.46 · 累计 ¥19.02</div>
+      <div style="margin-top:12px" class="rail">本次<br>¥1.46</div>
+      <div class="tip">
+        <b>本次会话</b> 8 次调用 · 命中 99.8% · 省 ¥1.46<br>
+        <b>累计省</b> ¥19.02（缓存折扣 + 指令瘦身）<br>
+        <b>开启前 → 开启后</b> 全部按未命中计价约 ¥21.8 → 实付 ¥2.77<br>
+        <b>累计命中</b> 10.4M / 10.6M 输入 token<br>
+        <b>调用次数</b> 134 次 · 输出按 ¥3/M 计<br>
+        <b>缓存前缀重建</b> 记录 <code>startsSeries</code> 次数<br>
+        <b>瘦身条数</b> 1 条 · 省 64 token
+      </div>
+    </div>
+  </div>
+
+  <h2>③ 将要提交的索引条目（dshfind 抓 npm + GitHub 后生成）</h2>
+<pre>{
+  "name": "dsh-token-saver",
+  "title": "dsh-token-saver",
+  "description": "DSH 省钱插件：指令进模型前做无损瘦身，左侧栏实时显示本次与累计省下的 token、金额和提示词缓存命中率。｜Losslessly slims …",
+  "icon": "https://avatars.githubusercontent.com/acmepoyen?s=96",
+  "author": "acmepoyen",
+  "homepage": "https://dshfind.com/en/plugins/acmepoyen/dsh-token-saver",
+  "repository": { "url": "https://github.com/acmepoyen/dsh-token-saver" },
+  "metadata": { "category": "tools", "sortKeys": { "stars": 0, "score": null } },
+  "versions": [ { "version": "0.1.1", "publishTimestamp": …, "source": { "type": "npm" } } ]
+}</pre>
+
+  <h2>④ 发布阻塞项（需要你给的口令）</h2>
+  <ul class="chk">
+    <li><span class="box done"></span><div><b>包已整理好</b>：<code>package.json</code> 补齐 description / keywords / repository / license / author / compatibility，新增 <code>LICENSE</code>(MIT)、双语 <code>README.md</code>，源码只依赖 node 内置模块。</div></li>
+    <li><span class="box"></span><div><b>npm 账号</b>：本机 <code>npm whoami</code> = <code>ENEEDAUTH</code>，没有 token。要么给我 npm access token（Automation 类型可直接发），要么你在终端跑一次 <code>npm login</code>。</div></li>
+    <li><span class="box"></span><div><b>GitHub 仓库</b>：本机没有 <code>gh</code>，<code>~/.ssh/psims_laptop_ed25519</code> 对 github.com 是 <code>Permission denied (publickey)</code>，也没配 HTTPS 凭据。需要一个 PAT（repo 权限）建仓库并推代码，仓库名建议 <code>acmepoyen/dsh-token-saver</code>。</div></li>
+    <li><span class="box"></span><div><b>打 <code>dsh-plugin</code> topic</b>：dshfind 每天 02:17 UTC 抓一次带该 topic 的公开仓库；仓库建好、topic 打上，第二天自动出现在市场，不用提 PR 或 issue。</div></li>
+  </ul>
+  <p class="note">注：<code>dsh-token-saver</code> 这个包名在 npm 上还是空的（registry 返回 404），可以直接占。</p>
+</div>
+</body>
+</html>

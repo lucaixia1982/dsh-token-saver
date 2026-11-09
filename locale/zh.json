@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Token 节省",
+    "description": "精简用户指令并在左侧边栏显示节省的 token 与费用、输入缓存命中率。"
+  }
+}
