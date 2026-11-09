@@ -57,8 +57,8 @@
 <body>
 <div class="wrap">
   <div class="top">
-    <span class="pill cat">上架预览</span>
-    <small>本地 mock，不是 dshfind 线上页面；线上收录后由 dshfind 自己的模板渲染。</small>
+    <span class="pill cat">已发布 · 待收录</span>
+    <small>本地 mock，不是 dshfind 线上页面；npm 已在 2026-11-09 发布，dshfind 每天 02:17 UTC 抓取，北京时间约 2026-11-10 10:17 出现在市场。</small>
   </div>
   <h1>dsh-token-saver</h1>
 
@@ -72,11 +72,11 @@
     </div>
     <div class="grow">
       <div class="row">
-        <span class="name">dsh-token-saver</span>
+        <span class="name">@acmepoyen/dsh-token-saver</span>
         <span class="pill cat">工具集成</span>
         <span class="pill ver">v0.1.1</span>
       </div>
-      <div class="by">@acmepoyen · dshfind.com/zh/plugins/acmepoyen/dsh-token-saver</div>
+      <div class="by">lucaixia1982 · dshfind.com/en/plugins/lucaixia1982/dsh-token-saver</div>
       <p class="desc">DSH 省钱插件：指令进模型前做无损瘦身，左侧栏实时显示本次与累计省下的 token、金额和提示词缓存命中率。
         <span class="en">Losslessly slims your instruction before it reaches the model, then shows this-session and all-time saved tokens/money plus the prompt-cache hit rate in the sidebar.</span>
       </p>
@@ -84,8 +84,7 @@
         <span>安装量 · 新包</span>
         <span>dshfind 评分 · 待收录</span>
         <span>许可 MIT</span>
-      </div>
-    </div>
+      </div>    </div>
     <div class="install">安装</div>
   </div>
 
@@ -95,7 +94,7 @@
       <h3>dsh-token-saver</h3>
       <div class="by">@acmepoyen · MIT · DeepSeek Harness 0.2.x</div>
       <div class="links" style="margin-top:10px">
-        <a href="#">GitHub 仓库</a><a href="#">npm 包</a><a href="#">讨论</a>
+        <a href="https://github.com/lucaixia1982/dsh-token-saver">GitHub 仓库</a><a href="https://www.npmjs.com/package/@acmepoyen/dsh-token-saver">npm 包</a><a href="https://github.com/lucaixia1982/dsh-token-saver/issues">讨论</a>
       </div>
       <p class="desc" style="margin-top:14px">它是一个「先瘦身、再记账、后展示」的三段式插件：</p>
       <table>
@@ -121,27 +120,27 @@
     </div>
   </div>
 
-  <h2>③ 将要提交的索引条目（dshfind 抓 npm + GitHub 后生成）</h2>
+  <h2>③ dshfind 将生成的索引条目（已按线上格式核对）</h2>
 <pre>{
-  "name": "dsh-token-saver",
+  "name": "@acmepoyen/dsh-token-saver",
   "title": "dsh-token-saver",
   "description": "DSH 省钱插件：指令进模型前做无损瘦身，左侧栏实时显示本次与累计省下的 token、金额和提示词缓存命中率。｜Losslessly slims …",
-  "icon": "https://avatars.githubusercontent.com/acmepoyen?s=96",
-  "author": "acmepoyen",
-  "homepage": "https://dshfind.com/en/plugins/acmepoyen/dsh-token-saver",
-  "repository": { "url": "https://github.com/acmepoyen/dsh-token-saver" },
-  "metadata": { "category": "tools", "sortKeys": { "stars": 0, "score": null } },
+  "icon": "https://avatars.githubusercontent.com/lucaixia1982?s=96",
+  "author": "lucaixia1982",
+  "homepage": "https://dshfind.com/en/plugins/lucaixia1982/dsh-token-saver",
+  "repository": { "url": "https://github.com/lucaixia1982/dsh-token-saver" },
+  "metadata": { "category": "tools", "labels": [], "sortKeys": { "stars": 0, "score": null } },
   "versions": [ { "version": "0.1.1", "publishTimestamp": …, "source": { "type": "npm" } } ]
 }</pre>
 
-  <h2>④ 发布阻塞项（需要你给的口令）</h2>
+  <h2>④ 发布进度</h2>
   <ul class="chk">
     <li><span class="box done"></span><div><b>包已整理好</b>：<code>package.json</code> 补齐 description / keywords / repository / license / author / compatibility，新增 <code>LICENSE</code>(MIT)、双语 <code>README.md</code>，源码只依赖 node 内置模块。</div></li>
-    <li><span class="box"></span><div><b>npm 账号</b>：本机 <code>npm whoami</code> = <code>ENEEDAUTH</code>，没有 token。要么给我 npm access token（Automation 类型可直接发），要么你在终端跑一次 <code>npm login</code>。</div></li>
-    <li><span class="box"></span><div><b>GitHub 仓库</b>：本机没有 <code>gh</code>，<code>~/.ssh/psims_laptop_ed25519</code> 对 github.com 是 <code>Permission denied (publickey)</code>，也没配 HTTPS 凭据。需要一个 PAT（repo 权限）建仓库并推代码，仓库名建议 <code>acmepoyen/dsh-token-saver</code>。</div></li>
-    <li><span class="box"></span><div><b>打 <code>dsh-plugin</code> topic</b>：dshfind 每天 02:17 UTC 抓一次带该 topic 的公开仓库；仓库建好、topic 打上，第二天自动出现在市场，不用提 PR 或 issue。</div></li>
+    <li><span class="box done"></span><div><b>npm 已发布</b>：<code>@acmepoyen/dsh-token-saver@0.1.1</code>，9 个文件 12.7 kB，shasum <code>642ee3e2…</code>；原候选名 <code>dsh-token-saver</code> 被 npm 判为与 <code>dsh-tokensaver</code> 过近而拒绝，故改用 scope。</div></li>
+    <li><span class="box done"></span><div><b>GitHub 仓库</b>：<code>lucaixia1982/dsh-token-saver</code> 公开，<code>main</code> 已推 3 个提交，MIT 许可。</div></li>
+    <li><span class="box done"></span><div><b>topic 已打</b>：<code>dsh-plugin</code> 等 5 个；dshfind 每天 02:17 UTC 抓一次带该 topic 的公开仓库，北京时间约 2026-11-10 10:17 自动出现在市场。</div></li>
   </ul>
-  <p class="note">注：<code>dsh-token-saver</code> 这个包名在 npm 上还是空的（registry 返回 404），可以直接占。</p>
+  <p class="note">安装方式：市场点安装；或 <code>npm i @acmepoyen/dsh-token-saver</code>；或把包目录交给 <code>plugin_manager install_bundle</code>。</p>
 </div>
 </body>
 </html>
