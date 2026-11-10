@@ -10,7 +10,7 @@ window.__ModuleLoader__.load({
     const h = React.createElement;
 
     // Sent with every poll so the host can tell which client build is live.
-    const CLIENT_VERSION = '6';
+    const CLIENT_VERSION = '7';
 
     function shortTokens(value) {
       const n = Number(value) || 0;
@@ -131,7 +131,35 @@ window.__ModuleLoader__.load({
     function TokenSaverBadge(props) {
       const stats = useStats();
       const wide = !!props.wide;
-      if (!stats) return null;
+      if (!stats) {
+        return h(
+          'div',
+          {
+            title:
+              'Token 节省 · 等待宿主统计\n/plugins/dsh-token-saver/stats 暂不可达。\n插件已装好时，重启一次 DSH 桌面端即可恢复。',
+            style: {
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '4px',
+              maxWidth: wide ? '100%' : '46px',
+              padding: wide ? '2px 8px' : '2px 4px',
+              borderRadius: '999px',
+              border: '1px dashed var(--dsw-alias-border-l1, rgba(127,127,127,0.24))',
+              background: 'transparent',
+              color: 'var(--dsw-alias-label-secondary, inherit)',
+              opacity: '0.7',
+              fontSize: wide ? '11px' : '10px',
+              lineHeight: '16px',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              userSelect: 'none',
+            },
+          },
+          wide ? 'Token 节省 等待统计…' : '…',
+        );
+      }
 
       const m = normalize(stats);
       const currency = m.currency;

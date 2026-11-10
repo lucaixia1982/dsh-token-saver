@@ -1,8 +1,8 @@
 {
     "name":  "@acmepoyen/dsh-token-saver",
-    "version":  "0.1.2",
+    "version":  "0.1.3",
     "type":  "module",
-    "description":  "DSH 鐪侀挶鎻掍欢锛氭寚浠よ繘妯″瀷鍓嶅仛鏃犳崯鐦﹁韩锛屽乏渚ф爮瀹炴椂鏄剧ず鏈涓庣疮璁＄渷涓嬬殑 token銆侀噾棰濆拰鎻愮ず璇嶇紦瀛樺懡涓巼銆傦綔Losslessly slims your instruction before it reaches the model, then shows this-session and all-time saved tokens/money plus the prompt-cache hit rate in the sidebar.",
+    "description":  "DSH 閻線鎸堕幓鎺嶆閿涙碍瀵氭禒銈堢箻濡€崇€烽崜宥呬粵閺冪姵宕惁锕侀煩閿涘苯涔忔笟褎鐖€圭偞妞傞弰鍓с仛閺堫剚顐兼稉搴ｇ柈鐠侊紕娓锋稉瀣畱 token閵嗕線鍣炬０婵嗘嫲閹绘劗銇氱拠宥囩处鐎涙ê鎳℃稉顓犲芳閵嗗偊缍擫osslessly slims your instruction before it reaches the model, then shows this-session and all-time saved tokens/money plus the prompt-cache hit rate in the sidebar.",
     "keywords":  [
                      "dsh",
                      "dsh-plugin",
