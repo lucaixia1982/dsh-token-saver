@@ -1,59 +1,59 @@
 {
-  "name": "@acmepoyen/dsh-token-saver",
-  "version": "0.1.1",
-  "type": "module",
-  "description": "DSH 省钱插件：指令进模型前做无损瘦身，左侧栏实时显示本次与累计省下的 token、金额和提示词缓存命中率。｜Losslessly slims your instruction before it reaches the model, then shows this-session and all-time saved tokens/money plus the prompt-cache hit rate in the sidebar.",
-  "keywords": [
-    "dsh",
-    "dsh-plugin",
-    "deepseek-harness",
-    "deepseek",
-    "token",
-    "token-saving",
-    "prompt-cache",
-    "cost",
-    "sidebar",
-    "cordis"
-  ],
-  "license": "MIT",
-  "author": "acmepoyen",
-  "homepage": "https://github.com/lucaixia1982/dsh-token-saver#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lucaixia1982/dsh-token-saver.git"
-  },
-  "bugs": {
-    "url": "https://github.com/lucaixia1982/dsh-token-saver/issues"
-  },
-  "exports": {
-    ".": "./index.js",
-    "./client": "./client.js",
-    "./locale/*.json": "./locale/*.json",
-    "./icon": "./icon.svg"
-  },
-  "files": [
-    "index.js",
-    "client.js",
-    "cordis.patch.yml",
-    "locale/*.json",
-    "icon.svg"
-  ],
-  "engines": {
-    "node": ">=20"
-  },
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "platform": "web",
-      "immediately": true,
-      "inject": [
-        "@deepseek-ai/dsh-client-ui-conversation"
-      ]
-    },
-    "compatibility": {
-      "dsh": ">=0.2.0-rc.1 <0.3.0-0"
-    }
-  }
+    "name":  "@acmepoyen/dsh-token-saver",
+    "version":  "0.1.2",
+    "type":  "module",
+    "description":  "DSH 鐪侀挶鎻掍欢锛氭寚浠よ繘妯″瀷鍓嶅仛鏃犳崯鐦﹁韩锛屽乏渚ф爮瀹炴椂鏄剧ず鏈涓庣疮璁＄渷涓嬬殑 token銆侀噾棰濆拰鎻愮ず璇嶇紦瀛樺懡涓巼銆傦綔Losslessly slims your instruction before it reaches the model, then shows this-session and all-time saved tokens/money plus the prompt-cache hit rate in the sidebar.",
+    "keywords":  [
+                     "dsh",
+                     "dsh-plugin",
+                     "deepseek-harness",
+                     "deepseek",
+                     "token",
+                     "token-saving",
+                     "prompt-cache",
+                     "cost",
+                     "sidebar",
+                     "cordis"
+                 ],
+    "license":  "MIT",
+    "author":  "acmepoyen",
+    "homepage":  "https://github.com/lucaixia1982/dsh-token-saver#readme",
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/lucaixia1982/dsh-token-saver.git"
+                   },
+    "bugs":  {
+                 "url":  "https://github.com/lucaixia1982/dsh-token-saver/issues"
+             },
+    "exports":  {
+                    ".":  "./index.js",
+                    "./client":  "./client.js",
+                    "./locale/*.json":  "./locale/*.json",
+                    "./icon":  "./icon.svg"
+                },
+    "files":  [
+                  "index.js",
+                  "client.js",
+                  "cordis.patch.yml",
+                  "locale/*.json",
+                  "icon.svg"
+              ],
+    "engines":  {
+                    "node":  "\u003e=20"
+                },
+    "dsh":  {
+                "bundle":  {
+                               "patch":  "./cordis.patch.yml"
+                           },
+                "client":  {
+                               "platform":  "web",
+                               "immediately":  true,
+                               "inject":  [
+                                              "@deepseek-ai/dsh-client-ui-conversation"
+                                          ]
+                           },
+                "compatibility":  {
+                                      "dsh":  "\u003e=0.2.0-rc.1 \u003c0.3.0-0"
+                                  }
+            }
 }

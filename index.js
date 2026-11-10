@@ -414,10 +414,12 @@ export function apply(ctx, config) {
 
   /* --------------------------------------------------------------- web route */
 
-  const webServer = ctx.get('webServer');
-  if (!webServer || typeof webServer.register !== 'function') {
-    log('webServer service is unavailable; sidebar statistics will stay empty');
-  } else {
+  // The web server can be created after this plugin applies (cold-start ordering),
+  // so register as soon as it shows up instead of reading it exactly once.
+  let routeReady = false;
+  const attachRoute = (webServer) => {
+    if (routeReady) return;
+    routeReady = true;
     ctx.effect(() => webServer.register({
       kind: 'exact',
       path: ROUTE,
@@ -439,6 +441,30 @@ export function apply(ctx, config) {
         }
       },
     }));
+    log(`stats route registered at ${ROUTE}`);
+  };
+
+  const firstServer = ctx.get('webServer');
+  if (firstServer && typeof firstServer.register === 'function') {
+    attachRoute(firstServer);
+  } else {
+    ctx.effect(() => {
+      const poll = setInterval(() => {
+        const later = ctx.get('webServer');
+        if (later && typeof later.register === 'function') {
+          clearInterval(poll);
+          attachRoute(later);
+        }
+      }, 250);
+      const giveUp = setTimeout(() => {
+        clearInterval(poll);
+        if (!routeReady) log('webServer service never appeared; sidebar statistics stay empty');
+      }, 60000);
+      return () => {
+        clearInterval(poll);
+        clearTimeout(giveUp);
+      };
+    });
   }
 
   ctx.effect(() => {
